@@ -1,0 +1,22 @@
+# ┳┓┳┳┳┓ ┳┓┏┓┳┓
+# ┣┫┃┃┃┃ ┃┃┣ ┣┫
+# ┻┛┗┛┻┗┛┻┛┗┛┛┗
+
+FROM rust:latest AS builder
+
+# I need some nightly features for my awesome project
+RUN rustup toolchain install nightly && mkdir /build
+WORKDIR /build
+
+COPY Cargo.toml Cargo.lock hello-world.rs ./
+RUN cargo +nightly build --release
+
+# ┏┓┳┳┓┏┓┓
+# ┣ ┃┃┃┣┫┃
+# ┻ ┻┛┗┛┗┗┛
+
+FROM scratch AS final
+
+COPY --from=builder /build/target/release/hello-world /hello-world
+
+CMD [ "/hello-world" ]
