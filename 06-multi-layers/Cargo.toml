@@ -1,0 +1,16 @@
+cargo-features = ["profile-rustflags"]
+
+[package]
+name = "hello-world"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[[bin]]
+name = "hello-world"
+path = "hello-world.rs"
+
+[profile.release]
+strip = "symbols"
+rustflags = ["-C", "target-feature=+crt-static"]
