@@ -13,7 +13,7 @@ layout {
         pane
         pane split_direction="horizontal" {
             pane command="ssh" {
-                args "ubuntu1804"
+                args "ubuntu"
             }
             pane command="ssh" {
                 args "alpine319"

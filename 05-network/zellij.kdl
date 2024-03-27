@@ -11,14 +11,14 @@ layout {
 
     tab split_direction="vertical" {
         pane command="ssh" size="65%" {
-            args "ubuntu1804"
+            args "ubuntu"
         }
         pane split_direction="horizontal" {
             pane command="ssh" {
-                args "ubuntu1804"
+                args "ubuntu"
             }
             pane command="ssh" {
-                args "ubuntu1804"
+                args "ubuntu"
             }
         }
     }
