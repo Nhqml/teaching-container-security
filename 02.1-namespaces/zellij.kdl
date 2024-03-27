@@ -13,7 +13,7 @@ layout {
         pane split_direction="horizontal" {
             pane
             pane command="docker" {
-                args "run" "--rm" "-it" "--name" "mscs-demo-02" "mscs/demo/debian"
+                args "run" "--rm" "-it" "--name" "teaching-demo-02" "teaching/demo/debian"
             }
         }
         pane size="60%" command="htop"
