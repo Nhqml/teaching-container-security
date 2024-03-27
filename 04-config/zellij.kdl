@@ -12,7 +12,9 @@ layout {
     tab split_direction="vertical" cwd="./04-config" {
         pane
         pane split_direction="horizontal" {
-            pane edit="app.py"
+            pane command="nvim" {
+                args "-p" "app.py" "config.json"
+            }
             pane edit="Dockerfile"
         }
     }
