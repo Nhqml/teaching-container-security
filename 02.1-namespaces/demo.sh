@@ -17,7 +17,7 @@ command "sudo unshare -fp /bin/bash -c 'echo \$\$' # will really display bash's 
 printf "\n"
 
 info "You can also demonstrate this with a container:"
-command "docker run --rm -it --name ${CONTAINER_NAME} teaching/demo/debian"
+command "docker run --rm -it --name ${CONTAINER_NAME} teaching/demos/debian"
 command "docker top ${CONTAINER_NAME}"
 command "docker exec ${CONTAINER_NAME} ip -c a"
 command "docker exec ${CONTAINER_NAME} ps -aux"

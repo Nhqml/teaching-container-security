@@ -10,7 +10,7 @@ CONTAINER_NAME="teaching-demo-08"
 
 start_demo --split "Let's play a bit with namespaces"
 
-command "docker run --rm -it --name ${CONTAINER_NAME} --network=host teaching/demo/debian"
+command "docker run --rm -it --name ${CONTAINER_NAME} --network=host teaching/demos/debian"
 command "ip -c a"
 
 info "You're in the same network namespace as the host"
