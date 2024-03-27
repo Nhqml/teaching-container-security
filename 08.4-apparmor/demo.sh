@@ -10,8 +10,8 @@ CONTAINER_NAME="teaching-demo-08"
 
 start_demo "Can AppArmor stop me?"
 
-command "sudo apparmor_parser -rW profile"
-command "docker run --rm -it --security-opt apparmor=docker-teaching teaching/demo/debian"
-command "sudo apparmor_parser -R profile # remove the profile"
+command "sudo apparmor_parser -rW demos/08.4-apparmor/profile"
+command "docker run --rm -it --security-opt apparmor=docker-teaching teaching/demos/debian"
+command "sudo apparmor_parser -R demos/08.4-apparmor/profile # remove the profile"
 
 stop_demo

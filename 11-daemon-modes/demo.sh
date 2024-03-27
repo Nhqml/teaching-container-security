@@ -40,10 +40,10 @@ command "docker context use rootless"
 printf "\n"
 
 info "Everything looks normal"
-command "docker run --rm -it teaching/demo/debian"
+command "docker run --rm -it teaching/demos/debian"
 
 info "But we cannot bind to privileged ports since we're not root anymore"
-command "docker run --rm -it -p 80:80 teaching/demo/debian"
+command "docker run --rm -it -p 80:80 teaching/demos/debian"
 
 info "Cant we?"
 command "sudo setcap 'cap_net_bind_service=ep' /usr/bin/rootlesskit && systemctl --user restart docker"

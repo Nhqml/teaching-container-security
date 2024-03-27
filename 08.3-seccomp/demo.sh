@@ -10,12 +10,12 @@ CONTAINER_NAME="teaching-demo-08"
 
 start_demo "Yay! seccomp filtering"
 
-command "docker run --rm -it teaching/demo/debian"
+command "docker run --rm -it teaching/demos/debian"
 command "strace ls"
 printf "\n"
-command "docker run --rm -it --security-opt seccomp=no-exec teaching/demo/debian"
+command "docker run --rm -it --security-opt seccomp=no-exec teaching/demos/debian"
 printf "\n"
-command "docker run --rm -it --security-opt seccomp=no-write teaching/demo/debian"
+command "docker run --rm -it --security-opt seccomp=filter-write teaching/demos/debian"
 command "ls -la"
 
 stop_demo
