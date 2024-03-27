@@ -16,6 +16,6 @@ layout {
                 args "run" "--rm" "-it" "--name" "teaching-demo-02" "teaching/demo/debian"
             }
         }
-        pane size="60%" command="htop"
+        pane size="45%" command="htop"
     }
 }

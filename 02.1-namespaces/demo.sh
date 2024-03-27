@@ -11,7 +11,8 @@ CONTAINER_NAME="teaching-demo-02" # change it in zellij too
 start_demo "You can now show how namespaces are created and how they behave"
 
 command "sudo unshare -n ip -c a # will run the command in a new network namespace"
-command "sudo unshare -fp /bin/bash -c \"echo \$\$\" # will display bash's PID inside the namespace"
+command "sudo unshare -fp /bin/bash -c \"echo \$\$\" # will display bash's PID inside the namespace... or will it?"
+command "sudo unshare -fp /bin/bash -c 'echo \$\$' # will really display bash's PID inside the namespace"
 
 printf "\n"
 
