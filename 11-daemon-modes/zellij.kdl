@@ -11,10 +11,10 @@ layout {
 
     tab split_direction="vertical" cwd="./08.4-apparmor" {
         pane command="ssh" {
-            args "ubuntu"
+            args "ubuntu@ubuntu"
         }
         pane command="ssh" {
-            args "ubuntu"
+            args "ubuntu@ubuntu"
         }
     }
 }
