@@ -6,7 +6,7 @@ DEMO_SLUG="$(basename "${DEMO_DIR}")"
 source "${DEMO_DIR}/../_utils.sh"
 
 TAB_NAME="Demo ${DEMO_SLUG}"
-CONTAINER_NAME="mscs-demo-11"
+CONTAINER_NAME="teaching-demo-11"
 
 start_demo "Docker daemon modes userns-remap and rootless"
 
@@ -40,10 +40,10 @@ command "docker context use rootless"
 printf "\n"
 
 info "Everything looks normal"
-command "docker run --rm -it mscs/demo/debian"
+command "docker run --rm -it teaching/demo/debian"
 
 info "But we cannot bind to privileged ports since we're not root anymore"
-command "docker run --rm -it -p 80:80 mscs/demo/debian"
+command "docker run --rm -it -p 80:80 teaching/demo/debian"
 
 info "Cant we?"
 command "sudo setcap 'cap_net_bind_service=ep' /usr/bin/rootlesskit && systemctl --user restart docker"

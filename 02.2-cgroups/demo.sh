@@ -6,7 +6,7 @@ DEMO_SLUG="$(basename "${DEMO_DIR}")"
 source "${DEMO_DIR}/../_utils.sh"
 
 TAB_NAME="Demo ${DEMO_SLUG}"
-CONTAINER_NAME="mscs-demo-02"
+CONTAINER_NAME="teaching-demo-02"
 
 start_demo "You can now show how cgroups work"
 

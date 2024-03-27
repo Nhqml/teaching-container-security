@@ -6,18 +6,18 @@ DEMO_SLUG="$(basename "${DEMO_DIR}")"
 source "${DEMO_DIR}/../_utils.sh"
 
 TAB_NAME="Demo ${DEMO_SLUG}"
-CONTAINER_NAME="mscs-demo-08"
+CONTAINER_NAME="teaching-demo-08"
 
 start_demo --split "Let's play with capabilities and privileges"
 
 attention "Using --privileged is really not a good idea! Please don't do this on your own"
 
 task "Start by starting a normal container, without any special privileges (default config)"
-command "docker run --rm -it --name ${CONTAINER_NAME} mscs/demo/debian"
+command "docker run --rm -it --name ${CONTAINER_NAME} teaching/demo/debian"
 command "ls -la /dev"
 
 task "Now, let's start a container with the --privileged flag"
-command "docker run --rm -it --name ${CONTAINER_NAME} --privileged mscs/demo/debian"
+command "docker run --rm -it --name ${CONTAINER_NAME} --privileged teaching/demo/debian"
 
 printf "\n"
 
@@ -30,7 +30,7 @@ command "mount /dev/nvme0n1p1 /mnt && cat /mnt/etc/hostname && cat /mnt/tmp/secr
 printf "\n"
 
 attention "You should be very very very very very careful with the --privileged flag, prefer the use of --cap-add and --cap-drop for more granular control"
-command "docker run --rm -it --name ${CONTAINER_NAME} --cap-drop=CHOWN mscs/demo/debian"
+command "docker run --rm -it --name ${CONTAINER_NAME} --cap-drop=CHOWN teaching/demo/debian"
 command "chown nobody /var"
 
 stop_demo --split

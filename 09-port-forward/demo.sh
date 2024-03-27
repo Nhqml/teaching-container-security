@@ -6,12 +6,12 @@ DEMO_SLUG="$(basename "${DEMO_DIR}")"
 source "${DEMO_DIR}/../_utils.sh"
 
 TAB_NAME="Demo ${DEMO_SLUG}"
-CONTAINER_NAME="mscs-demo-09" # change it in zellij too
+CONTAINER_NAME="teaching-demo-09" # change it in zellij too
 
 start_demo "We can expose services on the host with port forwarding"
 
 task "Start a container and listen on ports 80 (HTTP) and 5432 (PostgreSQL)"
-command "docker run --rm -it --name ${CONTAINER_NAME} -p 80:80 mscs/demo/debian"
+command "docker run --rm -it --name ${CONTAINER_NAME} -p 80:80 teaching/demo/debian"
 command "while true; do nc -l -p 80; done& while true; do nc -l -p 5432; done&"
 
 printf "\n"
