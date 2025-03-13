@@ -44,12 +44,16 @@ notice () {
 
 start_demo () {
     split=false
+    sync=false
     args=()
 
     while [[ $# -gt 0 ]]; do
         case $1 in
         --split)
             split=true
+            ;;
+        --sync)
+            sync=true
             ;;
         -*)
             echo "Error: Unknown option '$1' for start_demo function."
@@ -67,8 +71,12 @@ start_demo () {
         zellij action new-pane -d right
     else
         zellij action new-tab -n "${TAB_NAME}" -l "${DEMO_DIR}/zellij.kdl"
-        zellij action go-to-tab 0
     fi
+    if [ "$sync" = true ]; then
+        zellij action toggle-active-sync-tab
+    fi
+
+    zellij action go-to-tab 0
 
     info "Demo is ready"
     for arg in "${args[@]}"; do

@@ -7,7 +7,7 @@ source "${DEMO_DIR}/../_utils.sh"
 
 TAB_NAME="Demo ${DEMO_SLUG}"
 
-start_demo "You can now run these commands to present your environment and your Docker installation"
+start_demo --sync "You can now run these commands to present your environment and your Docker installation"
 
 command "uname -srvm"
 command "docker version"

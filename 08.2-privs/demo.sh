@@ -25,7 +25,7 @@ info "You can see that the container has access to all devices on the host, incl
 task "Create a secret file on the host"
 command "echo \"s3cr3t\" > /tmp/secret.txt"
 task "You have access to it from the container!!!"
-command "mount /dev/nvme0n1p1 /mnt && cat /mnt/etc/hostname && cat /mnt/tmp/secret.txt"
+command "mount /dev/nvme0n1p2 /mnt && cat /mnt/etc/hostname && cat /mnt/tmp/secret.txt"
 
 printf "\n"
 

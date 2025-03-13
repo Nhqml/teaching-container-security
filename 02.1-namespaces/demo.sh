@@ -16,6 +16,18 @@ command "sudo unshare -fp /bin/bash -c 'echo \$\$' # will really display bash's 
 
 printf "\n"
 
+info "man 1 unshare"
+info "-i, --ipc     IPC"
+info "-m, --mount   Mount"
+info "-n, --net     Network"
+info "-p, --pid     PID"
+info "-u, --uts     UTS (hostnames)"
+info "-U, --user    User"
+info "-C, --cgroup  cgroup"
+info "-T, --time    Time"
+
+printf "\n"
+
 info "You can also demonstrate this with a container:"
 command "docker run --rm -it --name ${CONTAINER_NAME} teaching/demos/debian"
 command "docker top ${CONTAINER_NAME}"

@@ -11,8 +11,13 @@ layout {
 
     tab split_direction="vertical" {
         pane cwd="10-daemon"
-        pane command="ssh" {
-            args "demo@ubuntu"
+        pane split_direction="horizontal" {
+            pane command="ssh" {
+                args "demo@ubuntu"
+            }
+            pane command="ssh" {
+                args "ubuntu@ubuntu"
+            }
         }
     }
 }

@@ -24,4 +24,10 @@ printf "\n"
 info "We can inspect the image with \`dive\` to see what's inside"
 command "dive teaching/demos/03"
 
+printf "\n"
+
+info "We can fix by adding bash to our image"
+info "Or by working from something that already includes bash"
+command "docker build -f Dockerfile.debian -t teaching/demos/03-debian ."
+
 stop_demo
